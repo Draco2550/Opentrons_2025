@@ -41,12 +41,13 @@ protocols_directory = 'Protocol Full Batch'
 ```bash
 python3 Randomized_RTP.py
 ```
-**Note**: You will have to change the file that you want to work with in `Randomized_RTP.py`, please modify the line:
+**Note:** You will have to change the file that you want to work with in `Randomized_RTP.py`, please modify the line:
 ```py
 filename = 'file.py'
 ```
 To a file in the folder you provided in step 2.
 
+**Warning:** `Find_Replace_Z.py` Will **remove comments** and slightly modify the structure of your code on output. It will do this however *without* affecting functionality.
 
 ## ⬇️ Installation
 ### Prerequisites
