@@ -65,7 +65,6 @@ def find_parameters(filename, absolute_protocols_path):
     if filename.endswith('.py') and filename != '__init__.py':
             # Create a specification for the module from its file path.
             # This spec tells Python how to load the module.
-            #module_name = filename[:-3]
             in_memory_module_name = "module" # Give the module a valid in-memory name, e.g., "protocol_module".
             spec = importlib.util.spec_from_file_location(in_memory_module_name, original_filepath)
             
@@ -77,10 +76,6 @@ def find_parameters(filename, absolute_protocols_path):
             # Execute the module's code in the newly created module object.
             # This makes its functions and variables available.
             spec.loader.exec_module(module)
-
-            # full_module_import_path = f"{protocols_directory}.{module_name}"
-            #full_module_import_path = f"Archive.{module_name}"
-            #module = importlib.import_module(full_module_import_path)
 
             # Initialize a dictionary to store data for this specific protocol
             current_protocol_info = {"filename": filename}
