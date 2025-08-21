@@ -1,23 +1,33 @@
 # Opentrons_2025
-I'm proud to share the scripts I developed during my rewarding internship at Opentrons. I'm incredibly grateful for the opportunity to contribute and for the valuable skills I gained. These scripts should lower production time and cost for working with protocols by making it easier to batch audit and simulate.
-
-## 🌟 Highlights
-
-The best part of these tools would be the amount of time it could save you!
-- It can look over all your protocols in a folder with the Audit.py script.
-  - Providing details on things such as the metadata, what modules it uses, the R.T.P in the file, inform you about possible z-height issues, and lastly, what type of resoivors it requires.
-- The Find_Replace_Z.py file that does what it says, it will find instances of z-height issues and replace them for you with the threshold that you provide within a folder.
-- If you need to generate randomized files to test out all different extreme combinations that are possible with your protocol use Randomized_RTP.py
-
-
 ## ℹ️ Overview
+This repository contains four Python scripts developed during an internship on the Science team at Opentrons. These scripts automate key tasks to help lower production time and costs associated with developing Opentrons protocols. Specifically, the scripts facilitate batch auditing and simulation.
 
-A paragraph explaining your work, who you are, and why you made it.
+
+## 📜 Scripts
+
+Here is a breakdown of the scripts included in this repository:
+
+* **Audit.py**: This script analyzes all protocols in a specified folder. It provides a comprehensive report for each protocol, including:
+    * Metadata
+    * Required modules
+    * Run-time parameters (RTP)
+    * Potential z-height issues
+    * Required reservoir types
+
+* **Find_Replace_Z.py**: This script addresses z-height issues by finding and replacing problematic z-height values with a user-defined threshold. This can be run across an entire folder of protocols.
+
+* **Randomized_RTP.py**: This script generates randomized protocol files to test various extreme combinations of run-time parameters. This is useful for ensuring your protocol is robust and can handle a wide range of inputs.
+
+* **Mass_Simulation.py**: This script performs mass simulation of protocols and requires `Randomized_RTP.py`. It also requires the Opentrons API to be installed and configured.
 
 
 ### ✍️ Authors
+I'm proud to share these scripts I developed during my rewarding internship at Opentrons. I'm incredibly grateful for the opportunity to contribute and for the valuable skills I gained.
 
-Mention who you are and link to your GitHub or organization's website.
+Matthew Jednacz: [Github](https://github.com/Draco2550)
+
+Opentrons: [Website](https://opentrons.com/?srsltid=AfmBOooFPVLcU-ZwKOn6bhCLG0O56HeCHSJF9L3-y0bB3tStsgH-KZBS)
+
 
 
 ## 🚀 Usage
@@ -31,21 +41,22 @@ protocols_directory = 'Protocol Full Batch'
 ```bash
 python3 Randomized_RTP.py
 ```
+**Note**: You will have to change the file that you want to work with in `Randomized_RTP.py`, please modify the line:
+```py
+filename = 'file.py'
+```
+To a file in the folder you provided in step 2.
 
 
 ## ⬇️ Installation
-
-Install these files individually or as a group. Keep them in a folder that contains a folder of protocol you would like to work with.
+### Prerequisites
+* Python 3.10.0 or higher.
+* The Opentrons API (required for **Mass_Simulation.py**). See [Simulation Help](https://support.opentrons.com/s/article/Simulating-OT-2-protocols-on-your-computer) for installation steps.
+* It is recommended to use [pyenv](https://github.com/pyenv/pyenv) to manage Python versions locally.
+  
+Install these files individually or as a group. Keep them in a folder that contains a folder of protocols you would like to work with.
 **Mass_Simulation.py requires Randomized_RTP.py to be installed in the same folder.**
 
-Minimum python verison 3.10.0
-To use **Mass_Simulation.py** the Opentrons API needs to be installed and configured. Steps for that can be found here:
-[Simulation Help](https://support.opentrons.com/s/article/Simulating-OT-2-protocols-on-your-computer)
 
-
-
-## 💭 Feedback and Contributing
-
-Add a link to the Discussions tab in your repo and invite users to open issues for bugs/feature requests.
-
-This is also a great place to invite others to contribute in any ways that make sense for your project. Point people to your DEVELOPMENT and/or CONTRIBUTING guides if you have them.
+## 📝 License
+This project is licensed under the Apache-2.0 License. See the `LICENSE` file for more details.
